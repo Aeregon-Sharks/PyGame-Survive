@@ -2,10 +2,12 @@ import pygame
 import sys
 import math
 import random
+import os
 
 class GameView():
 
     def __init__(self, weapon, enemy):
+        self.script_dir = os.path.dirname(os.path.abspath(__file__))
         # Paused flag
         self.paused = False
         # Objects
@@ -47,9 +49,10 @@ class GameView():
         
         self.enemy_img = pygame.image.load(self.enemy.image_path).convert_alpha()
         self.enemy_img = pygame.transform.scale(self.enemy_img, self.enemy.dims)
-
-        self.empty_heart = pygame.image.load("assets/empty_heart.png")
-        self.full_heart = pygame.image.load("assets/full_heart.png")
+        empty_heart = os.path.join(self.script_dir, '../assets/empty_heart.png')
+        full_heart = os.path.join(self.script_dir, '../assets/full_heart.png')
+        self.empty_heart = pygame.image.load(empty_heart)
+        self.full_heart = pygame.image.load(full_heart)
         # Game loop
         self.clock = pygame.time.Clock()
         self.game_loop()
