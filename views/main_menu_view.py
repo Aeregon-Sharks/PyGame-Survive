@@ -71,7 +71,7 @@ class MainView:
     def instructions_menu(self):
         self.screen.fill(self.BG_COLOR)
         self.draw_text("Instrucciones", self.FONT, self.TEXT_COLOR, self.screen, self.WIDTH // 2, self.HEIGHT // 4)
-        self.draw_text("Muevete con W, A, S, D", self.FONT, self.TEXT_COLOR, self.screen, self.WIDTH // 2, self.HEIGHT // 2 - 20)
+        self.draw_text("Muevete con W, A, S, D. Elimina enemigos con el filo del hacha, no dejes que toquen el palo.", self.FONT, self.TEXT_COLOR, self.screen, self.WIDTH // 2, self.HEIGHT // 2 - 20)
         self.menu_buttons['Volver'] = self.draw_text("1. Volver", self.FONT, self.TEXT_COLOR, self.screen, self.WIDTH // 2, self.HEIGHT // 2 + 20)
         pygame.display.flip()
 
